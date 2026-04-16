@@ -31,13 +31,36 @@
       padding-bottom: 10px;
     }
 
+    /* PDF viewer */
     .pdf-container iframe {
       width: 100%;
       height: 600px;
       border: none;
       margin-bottom: 20px;
+      border-radius: 10px;
     }
 
+    .pdf-actions {
+      display: none;
+      margin-bottom: 15px;
+    }
+
+    .pdf-actions a {
+      display: inline-block;
+      padding: 10px 15px;
+      margin-right: 10px;
+      background: #111;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .pdf-actions a.secondary {
+      background: #555;
+    }
+
+    /* Authors */
     .authors {
       display: flex;
       gap: 20px;
@@ -60,6 +83,7 @@
       margin-bottom: 10px;
     }
 
+    /* Gallery */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -79,6 +103,17 @@
       color: white;
       margin-top: 40px;
     }
+
+    /* Mobile optimization */
+    @media (max-width: 768px) {
+      .pdf-container iframe {
+        display: none;
+      }
+
+      .pdf-actions {
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
@@ -90,6 +125,12 @@
 
 <section>
   <h2>Memoria del TFG</h2>
+
+  <div class="pdf-actions">
+    <a href="Memoria TFG - Miguel Diaz y Dante Schrantz - Boeing.pdf" target="_blank">📄 Ver PDF</a>
+    <a href="Memoria TFG - Miguel Diaz y Dante Schrantz - Boeing.pdf" download class="secondary">⬇ Descargar</a>
+  </div>
+
   <div class="pdf-container">
     <iframe src="Memoria TFG - Miguel Diaz y Dante Schrantz - Boeing.pdf"></iframe>
   </div>
@@ -97,6 +138,12 @@
 
 <section>
   <h2>Póster del TFG</h2>
+
+  <div class="pdf-actions">
+    <a href="TFG-2.pdf" target="_blank">📄 Ver PDF</a>
+    <a href="TFG-2.pdf" download class="secondary">⬇ Descargar</a>
+  </div>
+
   <div class="pdf-container">
     <iframe src="TFG-2.pdf"></iframe>
   </div>
